@@ -1,0 +1,45 @@
+# Configuration file for processing LWCC data for Cruise PS113.
+# Empty lines and lines start with "#" are overridden.
+# Statements can be in any order.
+
+#-----Make changes according to your situation.-----------------------
+# Seperator between repeted measurement labels.
+separator=#
+
+#path length in meter
+path_length=1.978
+
+# TSG data (Pangaea)
+# Files names should be either 
+# "*phys_oce.tab" and/or "*surf_oce.tab", or
+# "*phys_oce_extracted.txt" and/or "*surf_oce_extracted.txt", respectively.
+# If data unavilable, leave the parameter empty, e.g. "tsgUW_pangaea=".
+tsgST_pangaea=PS113_phys_oce.tab
+tsgUW_pangaea=PS113_surf_oce.tab
+
+#labels
+#If one type of data (e.g. underway) is missing,  leave the parameter entry empty,
+# e.g."labelUW=".
+labelST=label_station.txt
+labelUW=label_underway.txt
+
+#modify labels.
+#sample labels before the seperator (e.g. '#')) need to contain certain keywords:
+#underway sample - keyword "UW" (case insensitive),
+#NaCl solution - keyword "NaCl", "PSU" or "Sal" (case insensitive),
+#and CTD sample labels do not contain any keywords mentioned in the other two catalogs.
+#If this is satisfied, "modified_labels="; otherwise, prepare your own "lwcc_labels_modify.txt".
+modified_labels=
+
+#Would you like to prepare your data ready for Pangaea now? Yes -> True; No -> False.
+TFpangaea=True
+
+# Information for uploading data to pangaea. If "TFpangaea=True", please prepare the file "labels_latlon_datetime_lwcc.txt". Otherwise, leave the parameter entry empty, i.e. "concurrent_info=".
+concurrent_info=labels_latlon_datetime_lwcc.txt
+
+#-----Do not make any change below unless you are sure what you are doing.----------------------------
+
+# Parameters from the .ini file. 
+#wavelength range and resolution.		
+xi=300:2:750    
+		 
